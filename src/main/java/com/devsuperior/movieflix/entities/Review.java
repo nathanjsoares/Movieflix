@@ -10,6 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "tb_review")
@@ -19,6 +20,7 @@ public class Review {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "Campo requerido")
     @Column(columnDefinition = "TEXT")
     private String text;
 
@@ -31,7 +33,6 @@ public class Review {
     private User user;
 
     public Review(){
-
     }
 
     public Review(Long id, String text, Movie movie, User user) {
