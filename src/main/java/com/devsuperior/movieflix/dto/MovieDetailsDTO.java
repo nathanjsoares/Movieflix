@@ -12,6 +12,9 @@ public class MovieDetailsDTO {
     private String synopsis;
     private GenreDTO genre;
 
+    public MovieDetailsDTO() {
+    }
+
     public MovieDetailsDTO(Movie entity) {
         this.id = entity.getId();
         this.title = entity.getTitle();
